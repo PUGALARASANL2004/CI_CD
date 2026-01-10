@@ -19,9 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd CI_CD
           python -m pip install --upgrade pip
-          pip install pytest
-          pip install -r CI_CD/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
