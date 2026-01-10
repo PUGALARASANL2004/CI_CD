@@ -8,6 +8,10 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: CI_CD   # 👈 VERY IMPORTANT
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,6 +33,10 @@ jobs:
   docker-push:
     runs-on: ubuntu-latest
     needs: build-test
+
+    defaults:
+      run:
+        working-directory: CI_CD   # 👈 VERY IMPORTANT
 
     steps:
       - name: Checkout code
